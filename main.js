@@ -34,6 +34,15 @@ function convertCsv(data, srcFileName) {
     saveAs(blob, srcFileName + '.CONVERTED.csv');
 }
 
+function loadCsvFile(f) {
+    let reader = new FileReader();
+    reader.onload = function(e) {
+        //console.log(e.target.result);
+        convertCsv(e.target.result, f.name);
+    };
+    reader.readAsText(f);
+}
+
 function dropHandler(ev) {
     console.log('File(s) dropped');
 
@@ -46,14 +55,8 @@ function dropHandler(ev) {
             // If dropped items aren't files, reject them
             if (ev.dataTransfer.items[i].kind === 'file') {
                 let file = ev.dataTransfer.items[i].getAsFile();
-                console.log('... file[' + i + '].name = ' + file.name);
-
-                let reader = new FileReader();
-                reader.onload = function(e){
-                    //console.log(e.target.result);
-                    convertCsv(e.target.result, file.name);
-                };
-                reader.readAsText(file);
+                //console.log('... file[' + i + '].name = ' + file.name);
+                loadCsvFile(file);
             }
         }
     }
@@ -64,4 +67,21 @@ function dragOverHandler(ev) {
 
     // Prevent default behavior (Prevent file from being opened)
     ev.preventDefault();
+}
+
+function triggerOpenFile(ev) {
+    $('#file-input').trigger('click');
+}
+
+$( document ).ready(function() {
+    $('#button').on('click', function() {
+        $('#file-input').trigger('click');
+    });
+});
+
+function selectFile(e) {
+    //console.log('selectFile');
+    let file = e.target.files[0];
+    console.log(file);
+    loadCsvFile(file);
 }
