@@ -18,7 +18,7 @@ function convertCsv(data, srcFileName) {
         let row = [
             fileName,
             description,
-            "",
+            description,
             keywords.join(';'),
             ""
         ];
@@ -31,7 +31,7 @@ function convertCsv(data, srcFileName) {
     });
 
     srcFileName = srcFileName.split('.').slice(0, -1).join('.');
-    saveAs(blob, srcFileName + '.ss.csv');
+    saveAs(blob, srcFileName + '.CONVERTED.csv');
 }
 
 function dropHandler(ev) {
@@ -50,7 +50,7 @@ function dropHandler(ev) {
 
                 let reader = new FileReader();
                 reader.onload = function(e){
-                    console.log(e.target.result);
+                    //console.log(e.target.result);
                     convertCsv(e.target.result, file.name);
                 };
                 reader.readAsText(file);
