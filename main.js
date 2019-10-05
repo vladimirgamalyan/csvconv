@@ -1,6 +1,6 @@
 
 
-function convertCsv(data) {
+function convertCsv(data, srcFileName) {
     //console.log('processing...');
     let srcData = $.csv.toArrays(data, {
         separator: ';'
@@ -29,9 +29,8 @@ function convertCsv(data) {
         type: "text/csv;charset=utf-8"
     });
 
-    saveAs(blob, 'result.csv');
+    saveAs(blob, srcFileName + '.converted.csv');
 }
-
 
 function dropHandler(ev) {
     console.log('File(s) dropped');
@@ -50,7 +49,7 @@ function dropHandler(ev) {
                 let reader = new FileReader();
                 reader.onload = function(e){
                     console.log(e.target.result);
-                    convertCsv(e.target.result);
+                    convertCsv(e.target.result, file.name);
                 };
                 reader.readAsText(file);
             }
