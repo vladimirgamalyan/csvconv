@@ -18,7 +18,7 @@ function convertCsv(data, srcFileName) {
         let row = [
             fileName,
             description,
-            description,
+            description + '.',
             keywords.join(';'),
             ""
         ];
