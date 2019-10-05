@@ -1,20 +1,32 @@
 
 
-
 function convertCsv(data) {
     //console.log('processing...');
-    let csv = $.csv.toObjects(data, {
+    let srcData = $.csv.toArrays(data, {
         separator: ';'
     });
     //console.log(csv);
 
-    csv.forEach(function(v){ delete v.Id });
-    console.log(csv);
+    let dstData = [];
+    for (let i = 1; i < srcData.length; ++i) {
+        let s = srcData[i];
+        let fileName = s[1];
+        fileName = fileName.split('.').slice(0, -1).join('.');
+        let description = s[2] + '. ' + s[4];
+        let keywords = s[3].split(',');
+        let row = [
+            fileName,
+            description,
+            "",
+            keywords.join(';'),
+            ""
+        ];
+        dstData.push(row);
+    }
 
-    let result = $.csv.fromObjects(csv);
-
+    let result = $.csv.fromArrays(dstData);
     let blob = new Blob([result], {
-        type: "text/plain;charset=utf-8"
+        type: "text/csv;charset=utf-8"
     });
 
     saveAs(blob, 'result.csv');
