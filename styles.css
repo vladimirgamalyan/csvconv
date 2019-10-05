@@ -1,0 +1,31 @@
+body {
+    font-family: Roboto, sans-serif;
+    color: #0f3c4b;
+    background-color: #e5edf1;
+    padding: 5rem 1.25rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.box {
+    font-size: 1.25rem;
+    background-color: #c8dadf;
+    position: relative;
+    padding: 100px 20px;
+
+    outline: 3px dashed #92b0b3;
+    outline-offset: -8px;
+}
+
+.box__icon {
+    width: 100%;
+    height: 80px;
+    fill: #92b0b3;
+    display: block;
+    margin-bottom: 40px;
+}
