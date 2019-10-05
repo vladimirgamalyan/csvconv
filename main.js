@@ -11,7 +11,8 @@ function convertCsv(data, srcFileName) {
     for (let i = 1; i < srcData.length; ++i) {
         let s = srcData[i];
         let fileName = s[1];
-        fileName = fileName.split('.').slice(0, -1).join('.');
+        //fileName = fileName.split('.').slice(0, -1).join('.');
+        fileName = fileName.substring(0, fileName.toLowerCase().indexOf('.mp4') + 4);
         let description = s[2] + '. ' + s[4];
         let keywords = s[3].split(',');
         let row = [
@@ -29,7 +30,8 @@ function convertCsv(data, srcFileName) {
         type: "text/csv;charset=utf-8"
     });
 
-    saveAs(blob, srcFileName + '.converted.csv');
+    srcFileName = srcFileName.split('.').slice(0, -1).join('.');
+    saveAs(blob, srcFileName + '.ss.csv');
 }
 
 function dropHandler(ev) {
