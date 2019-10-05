@@ -3,9 +3,6 @@ body {
     color: #6a8689;
     background-color: #e5edf1;
     padding: 5rem 1.25rem;
-
-    background-image: url("pattern1.png");
-    background-repeat: repeat;
 }
 
 .container {

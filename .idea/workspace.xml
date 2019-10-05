@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd3a48fe-432e-45ad-9140-98ad7a3bad8c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -42,8 +40,8 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+            <state relative-caret-position="120">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -143,7 +141,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10152000" />
+    <option name="totallyTimeSpent" value="10754000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1152" y="89" width="1416" height="1317" extended-state="0" />
@@ -254,8 +252,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+        <state relative-caret-position="120">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
