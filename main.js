@@ -1,4 +1,9 @@
 
+function uppercaseAllWords(words) {
+    return _.map(words.split(' '), function (w) {
+        return w.charAt(0).toUpperCase() + w.substring(1);
+    }).join(' ');
+}
 
 function convertCsv(data, srcFileName) {
     //console.log('processing...');
@@ -15,6 +20,7 @@ function convertCsv(data, srcFileName) {
         fileName = fileName.substring(0, fileName.toLowerCase().indexOf('.mp4') + 4);
         let description = s[2] + '. ' + s[4];
         let keywords = s[3].split(',');
+        keywords = _.map(keywords, uppercaseAllWords);
         let row = [
             fileName,
             description,
