@@ -5,6 +5,18 @@ function uppercaseAllWords(words) {
     }).join(' ');
 }
 
+function normalizeFileName(fileName) {
+    let i = fileName.toLowerCase().indexOf('.mp4');
+    if (i !== -1) {
+        return fileName.substring(0, i + 4);
+    }
+    i = fileName.indexOf('.');
+    if (i !== -1) {
+        return fileName.substring(0, i);
+    }
+    return fileName;
+}
+
 function convertCsv(data, srcFileName) {
     //console.log('processing...');
     let srcData = $.csv.toArrays(data, {
@@ -17,7 +29,7 @@ function convertCsv(data, srcFileName) {
         let s = srcData[i];
         let fileName = s[1];
         //fileName = fileName.split('.').slice(0, -1).join('.');
-        fileName = fileName.substring(0, fileName.toLowerCase().indexOf('.mp4') + 4);
+        fileName = normalizeFileName(fileName);
         let description = s[2] + '. ' + s[4];
         let keywords = s[3].split(',');
         keywords = _.map(keywords, uppercaseAllWords);
