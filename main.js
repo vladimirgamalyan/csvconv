@@ -32,7 +32,7 @@ function convertCsv(data, srcFileName) {
         fileName = normalizeFileName(fileName);
         let description = s[2] + '. ' + s[4];
         let keywords = s[3].split(',');
-        keywords = _.map(keywords, uppercaseAllWords);
+        // keywords = _.map(keywords, uppercaseAllWords);
         let row = [
             fileName,
             description,
